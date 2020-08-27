@@ -26,7 +26,7 @@ function memo() {
       list.insertAdjacentHTML("afterend", HTML);
       formText.value = "";  //「メモの入力フォームに入力されたままの文字」はリセットされます。正確には、空の文字列に上書きされるような仕組み
     };
-    e.preventDefault();
+    e.preventDefault(); 
   });
 }
 window.addEventListener("load", memo);
