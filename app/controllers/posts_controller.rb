@@ -11,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def checked
-    post = Post.find(params[:id])　#URLパラメーターから既読したメモのidが渡す
+    post = Post.find(params[:id])   #URLパラメーターから既読したメモのidが渡す
     if post.checked                 #既読であるか否かを判定
       post.update(checked: false)  #既読であれば既読を解除するためにfalseへ変更
     else
       post.update(checked: true)   #既読でなければ「既読にするためtrueへ変更   update...ActiveRecordメソッドのひとつ
     end
 
-    item = Post.find(params[:id])　　#更新したレコードをitem = Post.find(params[:id])で取得し直す
-    render json: { post: item }　　 #JSON形式（データ）としてchecked.jsに返却
+    item = Post.find(params[:id])  #更新したレコードをitem = Post.find(params[:id])で取得し直す
+    render json: { post: item }   #JSON形式（データ）としてchecked.jsに返却
   end
 end
